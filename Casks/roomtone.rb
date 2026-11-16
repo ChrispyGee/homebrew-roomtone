@@ -1,6 +1,6 @@
 cask "roomtone" do
-  version "0.7.1"
-  sha256 "950de98c87d5333a74a77e229cf0ae4d7b71e622ee7dc72e616aad1f41c7d3b2"
+  version "0.8.0"
+  sha256 "c313f413bdccb0a35aabfce7453b77626924bdcc80b46708cec50acc7054895c"
 
   url "https://github.com/ChrispyGee/Roomtone/releases/download/v#{version}/roomtone-v#{version}-macos-arm64.dmg"
   name "Roomtone"
