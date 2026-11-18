@@ -1,6 +1,6 @@
 cask "roomtone" do
-  version "0.9.0"
-  sha256 "c114ddfcc129cf338cac487b070e380dc84ce755cdcbfbea1ab6816241d600a5"
+  version "0.9.1"
+  sha256 "9fe7642c78963efb57c3baba60588c840fedfc8f175532bfc36e81e7367efbef"
 
   url "https://github.com/ChrispyGee/Roomtone/releases/download/v#{version}/roomtone-v#{version}-macos-arm64.dmg"
   name "Roomtone"
@@ -16,7 +16,13 @@ cask "roomtone" do
 
   app "Roomtone.app"
 
-  # Roomtone isn't signed or notarised by Apple yet, so macOS asks for confirmation the first
-  # time: right-click the app and choose Open.
+  # Roomtone isn't signed or notarised by Apple yet, so macOS asks for confirmation the first time.
+  caveats <<~EOS
+    Roomtone isn't signed by Apple yet, so macOS blocks it the first time you open it.
+    Open it, click Done, then go to System Settings > Privacy & Security and click "Open Anyway".
+    Allow it to find devices on your local network when asked, or it can't see your speakers.
+    Step by step: https://github.com/ChrispyGee/Roomtone/blob/main/docs/FIRST_RUN.md
+  EOS
+
   zap trash: "~/Library/Application Support/Roomtone"
 end
